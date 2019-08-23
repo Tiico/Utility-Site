@@ -1,5 +1,5 @@
 {
-  "name": "reactexpress",
+  "name": "utilitysite",
   "version": "1.0.0",
   "description": "Starter kit for creating React/Redux and Express apps",
   "main": "server/server.js",
@@ -10,7 +10,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Brad Traversy & Gregory Assasie",
+  "author": "Nicklas Ockelberg",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
