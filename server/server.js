@@ -14,11 +14,11 @@ app.get('/api/customers', (req, res) => {
 });
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/../client/build'));
 
 app.get('/*', function(req,res) {
 
-res.sendFile(path.join(__dirname +'/build/index.html'));
+res.sendFile(path.join(__dirname +'/../client/build/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
