@@ -4,6 +4,7 @@ import logo from './logo.svg'
 import './App.css'
 import store from './store'
 import Customers from './components/Customer/customers'
+import Weather from './components/Weather/weather'
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
             <h1 className="App-title">React/Redux Express Workbench </h1>
           </header>
           <Customers/>
+          <Weather/>
         </div>
       </Provider>
     )
