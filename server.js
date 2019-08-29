@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.get('/api/customers', (req, res) => {
+app.get('api/customers', (req, res) => {
   const customers = [
     {id: 1, firstName: 'John', lastName: 'Doe'},
     {id: 2, firstName: 'Brad', lastName: 'Traversy'},
@@ -13,12 +13,14 @@ app.get('/api/customers', (req, res) => {
   res.json(customers);
 });
 
-app.get('/api/weather', (req, res) => {
-  fetch('https://samples.openweathermap.org/data/2.5/weather?zip=16453,se&appid=b6907d289e10d714a6e88b30761fae22')
-  .then(result => res.json())
+app.get('api/weather', (req, res) => {
+  const weather = [
+    {id: 1, firstName: 'reeeee', lastName: 'Doe'}
+  ];
 
-  res.json(result);
+  res.json(weather);
 });
+
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/build'));
