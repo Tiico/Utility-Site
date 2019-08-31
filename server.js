@@ -9,7 +9,7 @@ const app = express();
 app.get('/api/weather', (req, res) => {
   const lat = req.query.lat;
   const lon = req.query.lon;
-  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API}`
+  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${API}`
   fetch(url)
   .then(res => res.json())
   .then((data) => {
@@ -18,7 +18,7 @@ app.get('/api/weather', (req, res) => {
   .catch(console.log)
 });
 
-process.env.NODE_ENV = 'production'
+//process.env.NODE_ENV = 'production'
 
 if(process.env.NODE_ENV === 'production'){
   // Serve only the static files form the dist directory
