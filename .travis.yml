@@ -6,7 +6,8 @@ cache:
   - node_modules
 script:
 - npm test
-- cd client && npm run build
+- cd client
+- npm run build
 deploy:
   provider: heroku
   app: utility-site
