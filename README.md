@@ -2,6 +2,8 @@
 
 > Create full stack apps with React/Redux and Express. Run your client and server with a single command
 
+Hosted dev-site can be found here: http://utility-site.herokuapp.com/
+
 ## Quick Start
 
 ``` bash
