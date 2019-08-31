@@ -18,13 +18,16 @@ app.get('/api/weather', (req, res) => {
   .catch(console.log)
 });
 
+//process.env.NODE_ENV = 'production'
+
 if(process.env.NODE_ENV === 'production'){
   // Serve only the static files form the dist directory
-  app.use(express.static(__dirname + './client/build'));
+  app.use(express.static(__dirname + '/client/build'));
+  console.log()
 
   app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname +'./client/build/index.html'));
+  res.sendFile(path.join(__dirname +'/client/build/index.html'));
   });
 }
 
