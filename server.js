@@ -18,7 +18,7 @@ app.get('/api/weather', (req, res) => {
   .catch(console.log)
 });
 
-//process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'production'
 
 if(process.env.NODE_ENV === 'production'){
   // Serve only the static files form the dist directory
