@@ -8,8 +8,8 @@ class Weather extends Component {
     super(props);
     this.state = {
       location: {
-        lat: props.lat,
-        lon: props.lon
+        lat: props.lat || 59,
+        lon: props.lon || 19
       },
       isLoaded: false,
       weather: {}
@@ -18,11 +18,11 @@ class Weather extends Component {
   componentDidMount() {
     WeatherService.weather(this.state.location.lat, this.state.location.lon)
     .then((request) => {
+      console.log(request)
       this.setState({
         isLoaded: true,
         weather: request
       })
-      //console.log(this.state.weather.main.temp)
     })
     .catch(console.log)
   }
@@ -33,17 +33,18 @@ class Weather extends Component {
       return <div>Loading...</div>
     }
     else{
+      console.log(weather)
+      let imgUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
       return (
-        <div className="container">
-            <h1>Weather in {weather.name} </h1>
-            <Container>
+        <div>
+            <Container id="weatherContainer">
               <Row>
-                <Col>{weather.weather[0].main}</Col>
-                <Col>{weather.main.temp}</Col>
+                <Col><img id="weatherImg" src={imgUrl} alt={weather.weather[0].main}></img></Col>
+                <Col>{Math.round(weather.main.temp)} °C</Col>
                 <Col>{weather.wind.speed}m/s & {weather.main.humidity}%</Col>
               </Row>
               <Row>
-                <Col>min {weather.main.temp_min} / max {weather.main.temp_max}</Col>
+                <Col>min {Math.round(weather.main.temp_min)} / max {Math.round(weather.main.temp_max)}</Col>
               </Row>
               <Row>
                 <Col>{weather.name}, {weather.sys.country}</Col>
