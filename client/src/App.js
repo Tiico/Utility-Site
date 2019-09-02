@@ -8,7 +8,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      location: {}
+      location: {
+      },
+      isLoaded: false,
     };
     this.displayLocationInfo = this.displayLocationInfo.bind(this);
   }
@@ -21,12 +23,18 @@ class App extends Component {
   displayLocationInfo(position) {
     const location = {lat: position.coords.latitude, lon: position.coords.longitude}
     this.setState({
-      location
+      location,
+      isLoaded: true,
     })
   }
 
 
   render() {
+    if(!this.state.isLoaded){
+      return (
+      <div>Loading...</div>
+      )
+    }else{
     return (
       <div className="App">
         <Container id="container">
@@ -48,7 +56,8 @@ class App extends Component {
             </Container>
       </div>
     );
-  }
+  }       
+}
 }
 
 export default App;

@@ -8,7 +8,7 @@ class Weather extends Component {
     super(props);
     this.state = {
       location: {
-        lat: props.lat || 59,
+        lat: props.lat || 59.8,
         lon: props.lon || 19
       },
       isLoaded: false,
@@ -18,7 +18,6 @@ class Weather extends Component {
   componentDidMount() {
     WeatherService.weather(this.state.location.lat, this.state.location.lon)
     .then((request) => {
-      console.log(request)
       this.setState({
         isLoaded: true,
         weather: request
@@ -33,7 +32,6 @@ class Weather extends Component {
       return <div>Loading...</div>
     }
     else{
-      console.log(weather)
       let imgUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
       return (
         <div>
