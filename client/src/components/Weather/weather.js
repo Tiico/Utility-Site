@@ -19,8 +19,8 @@ class Weather extends Component {
     WeatherService.weather(this.state.location.lat, this.state.location.lon)
     .then((request) => {
       this.setState({
-        isLoaded: true,
-        weather: request
+        weather: request,
+        isLoaded: true
       })
     })
     .catch(console.log)
