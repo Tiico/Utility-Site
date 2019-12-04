@@ -1,31 +1,24 @@
 const express = require('express');
+const config = require('./config');
 const path = require('path');
-const fetch = require("node-fetch");
 
-const API = 'ea9613e7a78b33977a6bbe6d3b0ff271';
+const guard = require('./helpers/guard');
+const auth = require('./routes/api/auth');
+const weather = require('./routes/api/weather');
 
 const app = express();
 
-app.get('/api/weather', (req, res) => {
-  const lat = req.query.lat;
-  const lon = req.query.lon;
-  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${API}`
-  fetch(url)
-  .then(res => res.json())
-  .then((data) => {
-    res.json(data);
-  })
-  .catch(console.log)
-});
+//app.use(/\/api\/.{1,}/, guard);
 
-process.env.NODE_ENV = 'production'
+app.use('/api/user', auth);
+app.use('/api/weather', weather);
 
-if(process.env.NODE_ENV === 'production'){
+
+if(config.ENV === 'production'){
   // Serve only the static files form the dist directory
   app.use(express.static(__dirname + '/../client/build'));
-  console.log()
 
-  app.get('/*', function(req,res) {
+  app.get('/*', function(req, res) {
 
   res.sendFile(path.join(__dirname +'/../client/build/index.html'));
   });
