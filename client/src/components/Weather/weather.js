@@ -19,7 +19,6 @@ class Weather extends Component {
   componentDidMount() {
     WeatherService.weather(this.state.location.lat, this.state.location.lon)
     .then((request) => {
-      console.log(request)
       this.setState({
         weather: request,
         isLoaded: true
