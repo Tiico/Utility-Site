@@ -39,15 +39,11 @@ class App extends Component {
       <div className="App">
         <Container id="container">
               <Row>
-                <Col></Col>
+                <Col><Weather lat={this.state.location.lat} lon={this.state.location.lon} /></Col>
                 <Col></Col>
                 <Col></Col>
               </Row>
-              <Row>
-              <Col></Col>
-              <Col></Col>
-              <Col></Col>
-              </Row>
+
               <Row>
                 <Col></Col>
                 <Col></Col>
