@@ -17,3 +17,4 @@ deploy:
   on:
     repo: Tiico/Utility-Site
     branch: master
+  strategy: git
