@@ -30,7 +30,7 @@ class Weather extends Component {
   render() {
     var {isLoaded, weather} = this.state
     if(!isLoaded){
-      return <div>Loading...</div>
+      return <div>Loading......</div>
     }
     else{
       let imgUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
