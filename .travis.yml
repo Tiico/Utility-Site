@@ -6,6 +6,10 @@ cache:
   - node_modules
 script:
 - npm test
+- cd client
+- npm i
+- npm run build
+- cd ../
 deploy:
   provider: heroku
   app: utility-site
@@ -14,4 +18,3 @@ deploy:
   on:
     repo: Tiico/Utility-Site
     branch: master
-  strategy: git
