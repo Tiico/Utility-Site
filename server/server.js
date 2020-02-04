@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 const express = require('express');
 const config = require('./config');
 const path = require('path');
 
-const guard = require('./helpers/guard');
+// const guard = require('./helpers/guard');
 const auth = require('./routes/api/auth');
 const weather = require('./routes/api/weather');
 
