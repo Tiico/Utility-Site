@@ -43,7 +43,11 @@ class App extends Component {
                 <Col></Col>
                 <Col></Col>
               </Row>
-
+              <Row>
+                <Col></Col>
+                <Col></Col>
+                <Col></Col>
+              </Row>
               <Row>
                 <Col></Col>
                 <Col></Col>

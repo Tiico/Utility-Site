@@ -13,6 +13,8 @@
   "author": "Nicklas Ockelberg",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
     "nodemon": "^1.14.6"
   },
   "dependencies": {
@@ -25,6 +27,6 @@
     "mongodb": "^3.3.5",
     "node-fetch": "^2.6.0",
     "react-bootstrap": "^1.0.0-beta.16",
-    "react-draggable": "^4.1.0"
+    "react-draggable": "^4.2.0"
   }
 }
