@@ -2,17 +2,19 @@
 const express = require('express');
 const config = require('./config');
 const path = require('path');
-
 // const guard = require('./helpers/guard');
 const auth = require('./routes/api/auth');
+const user = require('./routes/api/user');
 const weather = require('./routes/api/weather');
 
 const app = express();
 
 //app.use(/\/api\/.{1,}/, guard);
 
-app.use('/api/user', auth);
+app.use('/api/auth', auth);
+app.use('/api/user', user);
 app.use('/api/weather', weather);
+
 
 
 if(config.ENV === 'production'){

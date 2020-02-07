@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const fetch = require("node-fetch");
+const config = require("../../config")
 
-const API = 'ea9613e7a78b33977a6bbe6d3b0ff271';
+const API = config.WEATHER_API;
 
 /**
  * GET: Get the current weather based on coordinates
