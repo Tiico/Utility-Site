@@ -15,6 +15,7 @@ class Header extends Component {
     super(props);
     this.logout = this.logout.bind(this); 
     this.state = {
+      
     };
   }
   componentDidMount(){
@@ -62,9 +63,9 @@ class Header extends Component {
                 </IconButton>
               </Link>
               <MyBox></MyBox>
-              <Button color="inherit" component={Link} to="/recipes">
+{/*               <Button color="inherit" component={Link} to="/recipes">
                 Recipes
-              </Button>
+              </Button> */}
               <Button color="inherit" onClick={this.logout}>
                  Logout
               </Button>

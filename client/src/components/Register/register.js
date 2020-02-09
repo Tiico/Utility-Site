@@ -34,18 +34,11 @@ export default class Register extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-
-    let user = {
-      username: this.state.username,
-      firstname: this.state.firstname,
-      lastname: this.state.lastname,
-      email: this.state.email,
-      password: this.state.password
-    }
     try {
-      await AuthService.registerUser(user.username, user.firstname, user.lastname, user.email, user.password);
-      // .then(data => {
-      // });
+      await AuthService.registerUser(this.state.username, this.state.firstname, this.state.lastname, this.state.email, this.state.password)
+      .then(data => {
+        console.log("done")
+      });
       this.props.history.push('/login')
     } catch (err) {
       console.log(err)

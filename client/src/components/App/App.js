@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import Header from '../Header/header'
-import View from '../../components/Router-view/router-view'
+import RouterView from '../../components/Router-view/router-view'
 
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
         <Router>
           <Header/>
           <Container id="container">
-            <View/>
+            <RouterView/>
           </Container>
         </Router>
       </div>

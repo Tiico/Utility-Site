@@ -1,5 +1,5 @@
   
-import axios from './RequestObject';
+import axios from 'axios';
 
 const USER = 'api/user';
 const AUTH = 'api/auth'
@@ -9,20 +9,25 @@ class AuthService {
      * Registers a user
      * @param {*} user the user to be registered
      */
-    static registerUser(user) {
+    static registerUser(username, firstname, lastname, email, password) {
         // eslint-disable-next-line no-console
-        return axios.post(USER, user)
+        console.log("In AuthService: " + username)
+        return axios.post(USER, {
+            username,
+            firstname,
+            lastname,
+            email,
+            password
+        })
     }
     /**
      * authenticates a user
      * @param {*} user the user credentials to authenticate
      */
     static loginUser(username, password) {
-        return axios.get(AUTH, {
-            params: {
+        return axios.post(AUTH, {
             username,
-            password
-            }})
+            password})
         .then(response => {
             return {
                 ...response.data,

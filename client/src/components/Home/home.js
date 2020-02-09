@@ -19,6 +19,8 @@ class Home extends Component {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
     }
+    // eslint-disable-next-line no-console
+    console.log(this.props)
   } 
   displayLocationInfo(position) {
     const location = {lat: position.coords.latitude, lon: position.coords.longitude}
@@ -29,35 +31,44 @@ class Home extends Component {
   }
   
   render() {
-    let loggedIn = (this.props.user) ? true : false
-    if(!loggedIn){
-      return (
-        <div >
-          <h1>Hello: *user*, welcome to TastyRecipes!</h1>
-          <Row>
-              <Col><Weather lat={this.state.location.lat} lon={this.state.location.lon} /></Col>
-              <Col></Col>
-              <Col></Col>
-            </Row>
+    if(this.state.isLoaded){
+      let loggedIn = (this.props.user) ? true : false
+      if(loggedIn){
+        return (
+          <div >
+            <h1>Hello: {this.props.user.name}, welcome to TastyRecipes!</h1>
             <Row>
-              <Col></Col>
-              <Col></Col>
-              <Col></Col>
+                <Col><Weather lat={this.state.location.lat} lon={this.state.location.lon} /></Col>
+                <Col></Col>
+                <Col></Col>
+              </Row>
+              <Row>
+                <Col></Col>
+                <Col></Col>
+                <Col></Col>
+              </Row>
+              <Row>
+                <Col></Col>
+                <Col></Col>
+                <Col></Col>
             </Row>
-            <Row>
-              <Col></Col>
-              <Col></Col>
-              <Col></Col>
-          </Row>
-        </div>
-      );
+          </div>
+        );
+      }else{
+        return(
+          <div>
+            <h1>Not logged in</h1>
+          </div>
+        )
+      }
     }else{
       return(
         <div>
-          <h1>Not logged in</h1>
+          <h1>Loading...</h1>
         </div>
       )
     }
+
   }
 }
 /**

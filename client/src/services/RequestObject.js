@@ -1,7 +1,7 @@
 /* import store from '../store/store'
  */
 let axiosInstance = require('axios').create({
-  timeout: 3000
+  timeout: 10000
 });
 
 /**

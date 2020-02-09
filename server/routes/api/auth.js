@@ -8,9 +8,9 @@ const userService = require('../../integration/user-services');
  * GET: Authenticates based on the credentials that got passed in the request. 
  * Also returns a token to the user for future authentications.
  */
-router.get('/', async (req, res) => {
-    let username = req.query.username;
-    let password = req.query.password;
+router.post('/', async (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
 
 
     let authenticated = null;

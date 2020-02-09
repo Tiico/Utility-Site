@@ -1,4 +1,3 @@
-  
 const express = require('express');
 const router = express.Router();
 const userService = require('../../integration/user-services');
@@ -8,7 +7,6 @@ const userService = require('../../integration/user-services');
  */
 router.post('/', async (req, res) => {
   try {
-    console.log(req.body)
     await userService.submitUser(req.body)
     return res.status(201).json({
       message: 'Account successfully created!'

@@ -8,9 +8,11 @@ const user = require('./routes/api/user');
 const weather = require('./routes/api/weather');
 
 const app = express();
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
 
 //app.use(/\/api\/.{1,}/, guard);
-
 app.use('/api/auth', auth);
 app.use('/api/user', user);
 app.use('/api/weather', weather);
