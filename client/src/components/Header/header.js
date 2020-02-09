@@ -63,9 +63,6 @@ class Header extends Component {
                 </IconButton>
               </Link>
               <MyBox></MyBox>
-{/*               <Button color="inherit" component={Link} to="/recipes">
-                Recipes
-              </Button> */}
               <Button color="inherit" onClick={this.logout}>
                  Logout
               </Button>

@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const WEATHER = '/api/weather'
 
@@ -16,6 +16,7 @@ class WeatherService {
             }
         })
         .catch(function (error) {
+            // eslint-disable-next-line no-console
             console.log(error);
         })
 //        .then(function () {

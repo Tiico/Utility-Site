@@ -1,8 +1,8 @@
   
 import axios from 'axios';
 
-const USER = 'api/user';
-const AUTH = 'api/auth'
+const USER = '/api/user';
+const AUTH = '/api/auth'
 
 class AuthService {
     /**
