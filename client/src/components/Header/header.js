@@ -59,7 +59,7 @@ class Header extends Component {
             <Toolbar>
               <Link className="router-links" to="/home">
                 <IconButton disableRipple = {true} edge="start" color="inherit" aria-label="menu">
-                  TastyRecipes
+                  Utility-Site
                 </IconButton>
               </Link>
               <MyBox></MyBox>

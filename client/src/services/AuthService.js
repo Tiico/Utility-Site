@@ -10,8 +10,6 @@ class AuthService {
      * @param {*} user the user to be registered
      */
     static registerUser(username, firstname, lastname, email, password) {
-        // eslint-disable-next-line no-console
-        console.log("In AuthService: " + username)
         return axios.post(USER, {
             username,
             firstname,

@@ -17,9 +17,11 @@ app.use('/api/auth', auth);
 app.use('/api/user', user);
 app.use('/api/weather', weather);
 
+const env = config.ENV;
+const port = config.PORT;
 
 
-if(config.ENV === 'production'){
+if(env === 'production'){
   // Serve only the static files form the dist directory
   app.use(express.static(__dirname + '/../client/build'));
 
@@ -31,4 +33,4 @@ if(config.ENV === 'production'){
 
 
 // Start the app by listening on the default Heroku port
-app.listen(port = (process.env.PORT || 8080), () => console.log(`Server running on ${port}`));
+app.listen(port, () => console.log(`Server running on ${port}`));
