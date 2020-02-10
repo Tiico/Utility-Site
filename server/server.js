@@ -6,6 +6,7 @@ const path = require('path');
 const auth = require('./routes/api/auth');
 const user = require('./routes/api/user');
 const weather = require('./routes/api/weather');
+const note = require('./routes/api/note');
 
 const app = express();
 const bodyParser = require('body-parser')
@@ -16,6 +17,7 @@ app.use(bodyParser.json())
 app.use('/api/auth', auth);
 app.use('/api/user', user);
 app.use('/api/weather', weather);
+app.use('/api/note', note);
 
 const env = config.ENV;
 const port = config.PORT;
