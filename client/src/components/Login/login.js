@@ -34,7 +34,7 @@ class Login extends Component {
       name: "",
     }
     try {
-      await AuthService.loginUser(this.state.username, this.state.password).then(data => {
+      await AuthService.loginUser(this.state.username.toLowerCase(), this.state.password).then(data => {
         user.token.type = data.token_type
         user.token.access_token = data.access_token
         user.name = data.name

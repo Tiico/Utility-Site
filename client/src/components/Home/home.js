@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Row, Col} from 'react-bootstrap'
 import Weather from '../Weather/weather'
+import Notes from '../Notes/notes'
 import './home.css';
 
 class Home extends Component {
@@ -38,7 +39,7 @@ class Home extends Component {
             <Row>
                 <Col><Weather lat={this.state.location.lat} lon={this.state.location.lon} /></Col>
                 <Col></Col>
-                <Col></Col>
+                <Col><Notes user={this.props.user.name}/></Col>
               </Row>
               <Row>
                 <Col></Col>

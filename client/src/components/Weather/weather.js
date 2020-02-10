@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { Container, Row, Col } from 'react-bootstrap'
-import "./weather.css";
+import "./weather.scss";
 import WeatherService from '../../services/WeatherService.js'
 
 class Weather extends Component {
@@ -38,6 +38,7 @@ class Weather extends Component {
         <div>
           <Draggable>
             <Container id="weatherContainer">
+              <h5>Weather</h5>
               <Row>
                 <Col><img id="weatherImg" src={imgUrl} alt={weather.weather[0].main}></img></Col>
                 <Col>{Math.round(weather.main.temp)} °C</Col>

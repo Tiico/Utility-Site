@@ -35,7 +35,7 @@ export default class Register extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     try {
-      await AuthService.registerUser(this.state.username, this.state.firstname, this.state.lastname, this.state.email, this.state.password)
+      await AuthService.registerUser(this.state.username.toLowerCase(), this.state.firstname, this.state.lastname, this.state.email, this.state.password)
       .then(data => {
         console.log("done")
       });

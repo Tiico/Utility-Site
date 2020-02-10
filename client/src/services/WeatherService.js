@@ -19,9 +19,6 @@ class WeatherService {
             // eslint-disable-next-line no-console
             console.log(error);
         })
-//        .then(function () {
-//            // always executed
-//        });  
     }
 }
 export default WeatherService;
