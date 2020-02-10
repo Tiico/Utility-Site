@@ -33,7 +33,7 @@ class Weather extends Component {
       return <div>Loading......</div>
     }
     else{
-      let imgUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+      let imgUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
       return (
         <div>
           <Draggable>
