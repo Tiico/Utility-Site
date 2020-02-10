@@ -31,10 +31,10 @@ class Home extends Component {
   render() {
     if(this.state.isLoaded){
       let loggedIn = (this.props.user) ? true : false
-      if(loggedIn){
+      if(!loggedIn){
         return (
           <div >
-            <h1>Hello: {this.props.user.name}, welcome to Utility-site!</h1>
+            <h1>Hello: asdssss, welcome to Utility-site!</h1>
             <Row>
                 <Col><Weather lat={this.state.location.lat} lon={this.state.location.lon} /></Col>
                 <Col></Col>
